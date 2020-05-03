@@ -6,8 +6,7 @@ import (
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	"github.com/fajarsep12dev/go-api/api/modules/auth"
-
-	// _ "github.com/fajarsep12dev/go-api/api/docs" // Generated docs
+	_ "github.com/fajarsep12dev/go-api/docs" // Generated docs
 	log "github.com/fajarsep12dev/go-api/api/utils/logger"
 
 )
