@@ -17,7 +17,7 @@ import (
 var orm = db.ORM{}
 
 func init() {
-	setting.Setup()
+	setting.Initialize()
 	orm.Initialize()
 	seed.Initialize(orm.DB)
 }

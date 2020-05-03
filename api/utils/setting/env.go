@@ -5,8 +5,8 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// Setup initialize the configuration instance
-func Setup() {
+// Initialize the configuration instance
+func Initialize() {
 	err := godotenv.Load()
 	if err != nil {
 	  log.Fatal("Error loading .env file")
