@@ -23,11 +23,13 @@ func Initialize(db *gorm.DB) {
 		log.Fatal("cannot drop table: %v", err)
 	}
 
+	// Migrate table from models
 	err = db.Debug().AutoMigrate(&models.User{}).Error
 	if err != nil {
 		log.Fatal("cannot migrate table: %v", err)
 	}
 
+	// Seed to table
 	for i := range users {
 		err = db.Debug().Model(&models.User{}).Create(&users[i]).Error
 		if err != nil {
