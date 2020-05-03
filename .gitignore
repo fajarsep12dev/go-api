@@ -2,4 +2,7 @@ build/
 vendor/
 runtime/
 
+logs/
+
 .env
+.vscode
