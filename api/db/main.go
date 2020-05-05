@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jinzhu/gorm"
+	"github.com/qor/audited"
 	_ "github.com/jinzhu/gorm/dialects/mysql" // Connection Provider
 )
 
@@ -34,4 +35,5 @@ func (orm *ORM) Initialize() {
 	}
 
 	orm.DB.SingularTable(true)
+	audited.RegisterCallbacks(orm.DB)
 }

@@ -31,7 +31,7 @@ func Initialize(db *gorm.DB) {
 
 	// Seed to table
 	for i := range users {
-		err = db.Debug().Model(&models.User{}).Create(&users[i]).Error
+		err = db.Debug().Set("audited:current_user", 1).Model(&models.User{}).Create(&users[i]).Error
 		if err != nil {
 			log.Fatal("cannot seed users table: %v", err)
 		}
