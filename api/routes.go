@@ -19,9 +19,7 @@ func InitRouter() *gin.Engine {
 	// Logger middleware
 	log.LoggerFileSetup(gin.IsDebugging(), r)
 
-
-	apiv1 := r.Group("/api/v1")
-	apiv1.GET("/ping", auth.Ping)
+	auth.Routes(r)
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return r

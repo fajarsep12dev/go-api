@@ -16,7 +16,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/v1/ping": {
+        "/auth/ping": {
             "get": {
                 "produces": [
                     "application/json"

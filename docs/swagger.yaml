@@ -21,7 +21,7 @@ info:
   title: Blueprint Swagger API
   version: "1.0"
 paths:
-  /v1/ping:
+  /auth/ping:
     get:
       produces:
       - application/json

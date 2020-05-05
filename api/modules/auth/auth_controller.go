@@ -10,11 +10,12 @@ import (
 	L "github.com/fajarsep12dev/go-api/api/utils/logger"
 )
 
+// Ping handler example
 // @Summary Get multiple article tags
 // @Produce json
 // @Success 200 {string} app.Response
 // @Failure 500 {string} app.Response
-// @Router /v1/ping [get]
+// @Router /auth/ping [get]
 // @tags Ping
 func Ping(c *gin.Context) {
 	appG := app.Gin{C: c}
