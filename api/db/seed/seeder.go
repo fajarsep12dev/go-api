@@ -12,6 +12,7 @@ var users = []models.User{
 		Email: "fajarsep12dev@gmail.com",
 		FirstName: "Fajar",
 		LastName: "Septiawan",
+		Password: "Password1!",
 	},
 }
 
