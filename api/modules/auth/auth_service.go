@@ -2,7 +2,6 @@ package auth
 
 import (
 	"net/http"
-	
 	"github.com/gin-gonic/gin"
 
 	"github.com/fajarsep12dev/go-api/api/modules/auth/dto"
@@ -58,19 +57,17 @@ func (s *AuthService) GetUsers(c *gin.Context) {
 func (s *AuthService) CreateUser(c *gin.Context) {
 	var (
 		appG = app.Gin{C: c}
-		userInput dto.UserDto
+		form dto.UserDto
 	)
 
-	L.Info(userInput.Email)
-
-	httpCode, errCode := app.BindAndValid(c, &userInput)
+	httpCode, errCode := app.BindAndValid(c, &form)
 
 	if errCode != C.Success {
 		appG.Response(httpCode, errCode, nil)
 		return
 	}
 
-	createdAuth := s.AuthRepository.Save(ToUser(userInput))
+	createdAuth := s.AuthRepository.Save(ToUser(form))
 	appG.Response(http.StatusOK, C.Success, ToUserDTO(createdAuth))
 
 }

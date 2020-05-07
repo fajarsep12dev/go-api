@@ -12,6 +12,4 @@ func MarkErrors(errors []*validation.Error) {
 			Str("Error", err.Key).
 			Msg(err.Message)
 	}
-
-	return
 }

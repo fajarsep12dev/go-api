@@ -9,7 +9,7 @@ import (
 
 // BindAndValid binds and validates data
 func BindAndValid(c *gin.Context, form interface{}) (int, int) {
-	err := c.Bind(form)
+	err := c.BindJSON(form)
 	if err != nil {
 		return http.StatusBadRequest, C.Success
 	}
@@ -21,6 +21,7 @@ func BindAndValid(c *gin.Context, form interface{}) (int, int) {
 	}
 	if !check {
 		MarkErrors(valid.Errors)
+		
 		return http.StatusBadRequest, C.InvalidParam
 	}
 

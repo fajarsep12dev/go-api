@@ -2,8 +2,8 @@ package dto
 
 // UserDto model
 type UserDto struct {
-	Email   	string  `valid:"Email"`
-	FirstName   string	`form:"firstname" valid:"Required;MaxSize(25)"`
-	LastName    string	`form:"lastName" valid:"Required;MaxSize(25)"`
-	Password  	string  `form:"password" valid:"Required;MaxSize(12)"`
+	Email   	string  `json:"email" valid:"Email"`
+	FirstName   string	`json:"firstName" valid:"Required;MaxSize(25)"`
+	LastName    string	`json:"lastName" valid:"Required;MaxSize(25)"`
+	Password  	string  `json:"password" valid:"Required;MaxSize(12)"`
 }

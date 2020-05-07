@@ -19,6 +19,7 @@ func VerifyPassword(hashedPassword, password string) error {
 // EncodeMD5 md5 encryption
 func EncodeMD5(value string) string {
 	m := md5.New()
+	//nolint:errcheck
 	m.Write([]byte(value))
 
 	return hex.EncodeToString(m.Sum(nil))
