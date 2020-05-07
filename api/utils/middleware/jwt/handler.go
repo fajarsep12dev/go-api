@@ -24,6 +24,7 @@ func JWT() gin.HandlerFunc {
 		if tokenString == "" {
 			code = C.InvalidParam
 		} else {
+			//nolint:gosimple
 			token := tokenString[7:len(tokenString)]
 			fmt.Println(token)
 			_, err := ParseToken(token)
