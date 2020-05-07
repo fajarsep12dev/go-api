@@ -10,7 +10,7 @@ require (
 	github.com/gin-gonic/gin v1.6.2
 	github.com/go-openapi/spec v0.19.7 // indirect
 	github.com/go-openapi/swag v0.19.8 // indirect
-	github.com/google/wire v0.4.0 // indirect
+	github.com/google/wire v0.4.0
 	github.com/jinzhu/gorm v1.9.12
 	github.com/joho/godotenv v1.3.0
 	github.com/mailru/easyjson v0.7.1 // indirect

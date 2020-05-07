@@ -1,6 +1,6 @@
 # Swagger init command
 
-swag init -g cmd/go-server/main.go
+swag init -g main.go
 
 # Server run command
 

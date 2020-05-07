@@ -26,7 +26,7 @@ func init() {
 func Run() {
 	gin.SetMode(os.Getenv("RUN_MODE"))
 	
-	router := InitRouter()
+	router := InitRouter(orm.DB)
 	endPoint := fmt.Sprintf(":%s", os.Getenv("HTTP_PORT"))
 	maxHeaderBytes := 1 << 20
 

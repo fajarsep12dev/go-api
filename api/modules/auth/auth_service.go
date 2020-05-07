@@ -10,12 +10,16 @@ import (
 	L "github.com/fajarsep12dev/go-api/api/utils/logger"
 )
 
-// AuthController struct
 type AuthService struct {
 	AuthRepository AuthRepository
 }
 
-// Ping handler example
+func ProvideAuthService(authRepo AuthRepository) AuthService {
+	return AuthService{
+		AuthRepository: authRepo,
+	}
+} 
+
 // @Summary Get multiple article tags
 // @Produce json
 // @Success 200 {string} app.Response
@@ -28,4 +32,17 @@ func Ping(c *gin.Context) {
 	appG.Response(http.StatusOK, C.Success, map[string]string{
 		"message": "ping",
 	})
+}
+
+// @Summary Get all users
+// @Produce json
+// @Success 200 {string} app.Response
+// @Failure 500 {string} app.Response
+// @Router /auth/getusers [get]
+// @tags Users
+func (s *AuthService) GetUsers(c *gin.Context) {
+	appG := app.Gin{C: c}
+	users := s.AuthRepository.GetAll()
+
+	appG.Response(http.StatusOK, C.Success, ToUserDTOs(users))
 }
