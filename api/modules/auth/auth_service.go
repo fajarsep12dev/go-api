@@ -10,6 +10,11 @@ import (
 	L "github.com/fajarsep12dev/go-api/api/utils/logger"
 )
 
+// AuthController struct
+type AuthService struct {
+	AuthRepository AuthRepository
+}
+
 // Ping handler example
 // @Summary Get multiple article tags
 // @Produce json
