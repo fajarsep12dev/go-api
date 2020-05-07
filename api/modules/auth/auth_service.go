@@ -5,6 +5,7 @@ import (
 	
 	"github.com/gin-gonic/gin"
 
+	"github.com/fajarsep12dev/go-api/api/modules/auth/dto"
 	"github.com/fajarsep12dev/go-api/api/utils/app"
 	C "github.com/fajarsep12dev/go-api/api/utils/constant"
 	L "github.com/fajarsep12dev/go-api/api/utils/logger"
@@ -36,8 +37,8 @@ func Ping(c *gin.Context) {
 
 // @Summary Get all users
 // @Produce json
-// @Success 200 {string} app.Response
-// @Failure 500 {string} app.Response
+// @Success 200 {object} app.Response
+// @Failure 500 {object} app.Response
 // @Router /auth/getusers [get]
 // @tags Users
 func (s *AuthService) GetUsers(c *gin.Context) {
@@ -45,4 +46,31 @@ func (s *AuthService) GetUsers(c *gin.Context) {
 	users := s.AuthRepository.GetAll()
 
 	appG.Response(http.StatusOK, C.Success, ToUserDTOs(users))
+}
+
+// @Summary Save data users
+// @Produce json
+// @Param users body dto.UserDto true "User"
+// @Success 200 {object} app.Response
+// @Failure 500 {object} app.Response
+// @Router /auth/createusers [post]
+// @tags Users
+func (s *AuthService) CreateUser(c *gin.Context) {
+	var (
+		appG = app.Gin{C: c}
+		userInput dto.UserDto
+	)
+
+	L.Info(userInput.Email)
+
+	httpCode, errCode := app.BindAndValid(c, &userInput)
+
+	if errCode != C.Success {
+		appG.Response(httpCode, errCode, nil)
+		return
+	}
+
+	createdAuth := s.AuthRepository.Save(ToUser(userInput))
+	appG.Response(http.StatusOK, C.Success, ToUserDTO(createdAuth))
+
 }

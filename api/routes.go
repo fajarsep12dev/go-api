@@ -25,6 +25,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 	authApi := r.Group("/api/auth")
 	authApi.GET("/ping", auth.Ping)
 	authApi.GET("/getusers", authService.GetUsers)
+	authApi.POST("/createusers", authService.CreateUser)
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return r

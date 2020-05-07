@@ -16,6 +16,7 @@ require (
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/qor/audited v0.0.0-20171228121055-b52c9c2f0571
 	github.com/rs/zerolog v1.18.0
+	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.5
 	golang.org/x/crypto v0.0.0-20191205180655-e7c4368fe9dd

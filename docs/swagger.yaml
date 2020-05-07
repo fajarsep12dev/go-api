@@ -9,6 +9,17 @@ definitions:
       msg:
         type: string
     type: object
+  dto.UserDto:
+    properties:
+      email:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      password:
+        type: string
+    type: object
 info:
   contact:
     email: martin7.heinz@gmail.com
@@ -21,6 +32,29 @@ info:
   title: Blueprint Swagger API
   version: "1.0"
 paths:
+  /auth/createusers:
+    post:
+      parameters:
+      - description: User
+        in: body
+        name: users
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/app.Response'
+      summary: Save data users
+      tags:
+      - Users
   /auth/getusers:
     get:
       produces:
@@ -29,11 +63,11 @@ paths:
         "200":
           description: OK
           schema:
-            type: string
+            $ref: '#/definitions/app.Response'
         "500":
           description: Internal Server Error
           schema:
-            type: string
+            $ref: '#/definitions/app.Response'
       summary: Get all users
       tags:
       - Users
