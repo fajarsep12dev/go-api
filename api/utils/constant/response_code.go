@@ -1,18 +1,11 @@
 package constant
 
 const (
-	// Success code Response Message
-	Success = 200
-	// Error code Response Message
-	Error = 500
-	// InvalidParam code Response Message
-	InvalidParam = 400
-	// ErrorAuthCheckTokenFail code 
-	ErrorAuthCheckTokenFail = 20001
-	// ErrorAuthCheckTokenTimeOut code 
-	ErrorAuthCheckTokenTimeOut = 20002
-	// ErrorAuthToken code 
-	ErrorAuthToken = 20003
-	// ErrorAuth code 
-	ErrorAuth = 20004
+	SUCCESS = 200
+	ERROR = 500
+	INVALID_PARAM = 400
+	ERROR_AUTH_CHECK_TOKEN_FAIL = 20001
+	ERROR_AUTH_CHECK_TOKEN_TIMEOUT = 20002
+	ERROR_AUTH_TOKEN = 20003
+	ERROR_AUTH = 20004
 )

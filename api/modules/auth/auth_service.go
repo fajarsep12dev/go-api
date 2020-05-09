@@ -2,6 +2,7 @@ package auth
 
 import (
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 
 	"github.com/fajarsep12dev/go-api/api/modules/auth/dto"
@@ -29,7 +30,7 @@ func ProvideAuthService(authRepo AuthRepository) AuthService {
 func Ping(c *gin.Context) {
 	appG := app.Gin{C: c}
 	L.Debug("TEST DEBUGGING")
-	appG.Response(http.StatusOK, C.Success, map[string]string{
+	appG.Response(http.StatusOK, C.SUCCESS, map[string]string{
 		"message": "ping",
 	})
 }
@@ -44,7 +45,7 @@ func (s *AuthService) GetUsers(c *gin.Context) {
 	appG := app.Gin{C: c}
 	users := s.AuthRepository.GetAll()
 
-	appG.Response(http.StatusOK, C.Success, ToUserDTOs(users))
+	appG.Response(http.StatusOK, C.SUCCESS, ToUserDTOs(users))
 }
 
 // @Summary Save data users
@@ -62,12 +63,12 @@ func (s *AuthService) CreateUser(c *gin.Context) {
 
 	httpCode, errCode := app.BindAndValid(c, &form)
 
-	if errCode != C.Success {
+	if errCode != C.SUCCESS {
 		appG.Response(httpCode, errCode, nil)
 		return
 	}
 
 	createdAuth := s.AuthRepository.Save(ToUser(form))
-	appG.Response(http.StatusOK, C.Success, ToUserDTO(createdAuth))
+	appG.Response(http.StatusOK, C.SUCCESS, ToUserDTO(createdAuth))
 
 }

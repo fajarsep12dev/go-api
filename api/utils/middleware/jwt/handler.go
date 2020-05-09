@@ -17,12 +17,12 @@ func JWT() gin.HandlerFunc {
 		var code int
 		var data interface{}
 
-		code = C.Success
+		code = C.SUCCESS
 		tokenString := c.Request.Header.Get("Authorization")
 		fmt.Println(tokenString)
 
 		if tokenString == "" {
-			code = C.InvalidParam
+			code = C.INVALID_PARAM
 		} else {
 			//nolint:gosimple
 			token := tokenString[7:len(tokenString)]
@@ -31,14 +31,14 @@ func JWT() gin.HandlerFunc {
 			if err != nil {
 				switch err.(*jwt.ValidationError).Errors {
 				case jwt.ValidationErrorExpired:
-					code = C.ErrorAuthCheckTokenTimeOut
+					code = C.ERROR_AUTH_CHECK_TOKEN_TIMEOUT
 				default:
-					code = C.ErrorAuthCheckTokenFail
+					code = C.ERROR_AUTH_CHECK_TOKEN_FAIL
 				}
 			}
 		}
 
-		if code != C.Success {
+		if code != C.SUCCESS {
 			c.JSON(http.StatusUnauthorized, gin.H{
 				"code": code,
 				"msg":  app.GetMsg(code),

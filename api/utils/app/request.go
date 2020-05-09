@@ -2,14 +2,15 @@ package app
 
 import (
 	"github.com/astaxie/beego/validation"
-	"github.com/rs/zerolog/log"
+	log "github.com/fajarsep12dev/go-api/api/utils/logger"
 )
 
 // MarkErrors logs error logs
 func MarkErrors(errors []*validation.Error) {
 	for _, err := range errors {
-		log.Info().
-			Str("Error", err.Key).
-			Msg(err.Message)
+		// log.Info().
+		// 	Str("Error", err.Key).
+		// 	Msg(err.Message)
+		log.Error("Error : %s %s", err.Key, err.Message)
 	}
 }
