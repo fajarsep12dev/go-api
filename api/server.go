@@ -5,10 +5,12 @@ import (
 	"net/http"
 	"os"
 	"time"
-	"github.com/rs/zerolog/log"
+
 	"github.com/gin-gonic/gin"
+	"github.com/rs/zerolog/log"
 
 	"github.com/fajarsep12dev/go-api/api/db"
+	"github.com/fajarsep12dev/go-api/api/db/migrations"
 	"github.com/fajarsep12dev/go-api/api/db/seed"
 	"github.com/fajarsep12dev/go-api/api/utils/setting"
 )
@@ -19,6 +21,7 @@ var orm = db.ORM{}
 func init() {
 	setting.Initialize()
 	orm.Initialize()
+	migrations.Initialize(orm.DB)
 	seed.Initialize(orm.DB)
 }
 
