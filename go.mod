@@ -10,11 +10,12 @@ require (
 	github.com/gin-gonic/gin v1.6.2
 	github.com/go-openapi/spec v0.19.7 // indirect
 	github.com/go-openapi/swag v0.19.8 // indirect
-	github.com/google/wire v0.4.0
+	github.com/google/wire v0.4.0 // indirect
 	github.com/jinzhu/gorm v1.9.12
 	github.com/joho/godotenv v1.3.0
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/qor/audited v0.0.0-20171228121055-b52c9c2f0571
+	github.com/qor/qor v0.0.0-20200224122013-457d2e3f50e1 // indirect
 	github.com/rs/zerolog v1.18.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/swaggo/gin-swagger v1.2.0

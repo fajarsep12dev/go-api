@@ -5,7 +5,7 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql" // Mysql provider
-) 
+)
 
 // AuthRepository Interface
 type AuthRepository struct {
