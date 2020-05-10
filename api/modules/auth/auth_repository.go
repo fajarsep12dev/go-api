@@ -4,7 +4,6 @@ import (
 	"github.com/fajarsep12dev/go-api/api/db/models"
 
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql" // Mysql provider
 )
 
 // AuthRepository Interface
