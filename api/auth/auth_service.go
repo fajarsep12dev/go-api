@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/fajarsep12dev/go-api/api/modules/auth/dto"
+	"github.com/fajarsep12dev/go-api/api/auth/dto"
 	"github.com/fajarsep12dev/go-api/core/utils/app"
 	C "github.com/fajarsep12dev/go-api/core/utils/constant"
 	L "github.com/fajarsep12dev/go-api/core/utils/logger"

@@ -6,7 +6,7 @@
 package api
 
 import (
-	"github.com/fajarsep12dev/go-api/api/modules/auth"
+	"github.com/fajarsep12dev/go-api/api/auth"
 	"github.com/jinzhu/gorm"
 )
 
@@ -16,7 +16,7 @@ import (
 
 // Injectors from wire.go:
 
-func InitAuthService(db *gorm.DB) auth.AuthService {
+func initAuthService(db *gorm.DB) auth.AuthService {
 	authRepository := auth.ProvideAuthRepository(db)
 	authService := auth.ProvideAuthService(authRepository)
 	return authService

@@ -2,14 +2,13 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"github.com/jinzhu/gorm"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 
-	"github.com/fajarsep12dev/go-api/api/modules/auth"
-	_ "github.com/fajarsep12dev/go-api/docs" // Generated docs
+	"github.com/fajarsep12dev/go-api/api/auth"
 	log "github.com/fajarsep12dev/go-api/core/utils/logger"
-
+	_ "github.com/fajarsep12dev/go-api/docs" // Generated docs
 )
 
 // InitRouter initialize routing information
@@ -20,7 +19,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 	// Logger middleware
 	log.LoggerFileSetup(gin.IsDebugging(), r)
 
-	authService := InitAuthService(db)
+	authService := initAuthService(db)
 
 	authApi := r.Group("/api/auth")
 	authApi.GET("/ping", auth.Ping)
