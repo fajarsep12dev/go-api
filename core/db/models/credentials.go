@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/qor/audited"
 
-	"github.com/fajarsep12dev/go-api/api/utils/app"
+	"github.com/fajarsep12dev/go-api/core/utils/app"
 )
 
 // Credentials Model

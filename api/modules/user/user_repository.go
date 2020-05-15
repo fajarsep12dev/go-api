@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/fajarsep12dev/go-api/api/db/models"
+	"github.com/fajarsep12dev/go-api/core/db/models"
 
 	"github.com/jinzhu/gorm"
 )

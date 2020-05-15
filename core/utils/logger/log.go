@@ -4,7 +4,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/fajarsep12dev/go-api/api/utils/file"
+	"github.com/fajarsep12dev/go-api/core/utils/file"
 
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog"

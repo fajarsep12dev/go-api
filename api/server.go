@@ -9,10 +9,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 
-	"github.com/fajarsep12dev/go-api/api/db"
-	"github.com/fajarsep12dev/go-api/api/db/migrations"
-	"github.com/fajarsep12dev/go-api/api/db/seed"
-	"github.com/fajarsep12dev/go-api/api/utils/setting"
+	"github.com/fajarsep12dev/go-api/core/db"
+	"github.com/fajarsep12dev/go-api/core/db/migrations"
+	"github.com/fajarsep12dev/go-api/core/db/seed"
+	"github.com/fajarsep12dev/go-api/core/utils/setting"
 )
 
 

@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"github.com/fajarsep12dev/go-api/api/db/models"
+	"github.com/fajarsep12dev/go-api/core/db/models"
 	"github.com/fajarsep12dev/go-api/api/modules/auth/dto"
 )
 

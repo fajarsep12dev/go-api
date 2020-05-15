@@ -8,7 +8,7 @@ import (
 
 	"github.com/fajarsep12dev/go-api/api/modules/auth"
 	_ "github.com/fajarsep12dev/go-api/docs" // Generated docs
-	log "github.com/fajarsep12dev/go-api/api/utils/logger"
+	log "github.com/fajarsep12dev/go-api/core/utils/logger"
 
 )
 

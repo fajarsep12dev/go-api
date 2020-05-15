@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/astaxie/beego/validation"
-	log "github.com/fajarsep12dev/go-api/api/utils/logger"
+	log "github.com/fajarsep12dev/go-api/core/utils/logger"
 )
 
 // MarkErrors logs error logs

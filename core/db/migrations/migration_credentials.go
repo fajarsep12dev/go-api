@@ -3,7 +3,7 @@ package migrations
 import (
 	"github.com/jinzhu/gorm"
 
-	"github.com/fajarsep12dev/go-api/api/db/models"
+	"github.com/fajarsep12dev/go-api/core/db/models"
 )
 
 func MigrateCredential(db *gorm.DB) {	

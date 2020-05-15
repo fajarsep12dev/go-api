@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/astaxie/beego/validation"
-	C "github.com/fajarsep12dev/go-api/api/utils/constant"
+	C "github.com/fajarsep12dev/go-api/core/utils/constant"
 	"github.com/gin-gonic/gin"
 )
 

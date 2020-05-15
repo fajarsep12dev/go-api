@@ -1,8 +1,8 @@
 package migrations
 
 import (
-	"github.com/fajarsep12dev/go-api/api/db/models"
-	log "github.com/fajarsep12dev/go-api/api/utils/logger"
+	"github.com/fajarsep12dev/go-api/core/db/models"
+	log "github.com/fajarsep12dev/go-api/core/utils/logger"
 
 	"github.com/jinzhu/gorm"
 )

@@ -7,8 +7,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 
-	"github.com/fajarsep12dev/go-api/api/utils/app"
-	C "github.com/fajarsep12dev/go-api/api/utils/constant"
+	"github.com/fajarsep12dev/go-api/core/utils/app"
+	C "github.com/fajarsep12dev/go-api/core/utils/constant"
 )
 
 // JWT is jwt handler gin middlerware

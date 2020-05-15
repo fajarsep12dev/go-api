@@ -5,8 +5,8 @@ package api
 
 import (
 	"github.com/fajarsep12dev/go-api/api/modules/auth"
-	"github.com/jinzhu/gorm"
 	"github.com/google/wire"
+	"github.com/jinzhu/gorm"
 )
 
 func InitAuthService(db *gorm.DB) auth.AuthService {

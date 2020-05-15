@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/fajarsep12dev/go-api/api/utils/app"
+	"github.com/fajarsep12dev/go-api/core/utils/app"
 
 	"github.com/dgrijalva/jwt-go"
 )

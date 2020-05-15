@@ -1,6 +1,6 @@
 package app
 
-import C "github.com/fajarsep12dev/go-api/api/utils/constant"
+import C "github.com/fajarsep12dev/go-api/core/utils/constant"
 
 // MsgFlags for mapping constant code
 var MsgFlags = map[int]string{
